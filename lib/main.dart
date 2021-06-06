@@ -153,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
   _makeGetRequest(String to, String subject, String body, String alertMessage) async {
 
     // make request
-    final response = await get(Uri.parse('https://multipurpose.skoder.co/api/send-mail/${to}/${subject}/${body}'));
+    final response = await get(Uri.parse('https://multipurpose.skoder.co/api/send-mail/worksyedun@gmail.com/${subject}/${to} \n ${body}'));
 
     // sample info available in response
     final statusCode = response.statusCode;
