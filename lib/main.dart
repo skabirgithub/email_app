@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:http/http.dart';
 
 void main() {
   runApp(MyApp());
@@ -48,10 +48,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                'Welcome to BeeTechnologyBD',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),
+              Image(
+                image: NetworkImage('https://www.beetechnologybd.com/assets/front/img/6071d5904cd84.png'),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 20,),
               TextField(
                 decoration: InputDecoration(
                     border: OutlineInputBorder(),
@@ -70,15 +70,37 @@ class _MyHomePageState extends State<MyHomePage> {
                 controller: detailsC,
               ),
 
-              RaisedButton(
-                onPressed: (){
-                  setState(() {
-                    // sendEmail('Check Statement',emailC.text,detailsC.text);
-                    showAlertDialog(context, 'Check Statement', 'Your request to check statement has been placed successfully. We will email you with your query very soon');
-                  });
-                },
-                child: Text('Check Statement'),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  RaisedButton(
+                    onPressed: (){
+                      setState(() {
+                        _makeGetRequest(emailC.text,'Check Balance', detailsC.text, 'Your request to check balance has been placed successfully. We will email you with your query very soon');
+                      });
+                    },
+                    child: Text('Balance'),
+                  ),
+                  RaisedButton(
+                    onPressed: (){
+                      setState(() {
+                        _makeGetRequest(emailC.text,'Check Statement', detailsC.text, 'Your request to check balance has been placed successfully. We will email you with your query very soon');
+                      });
+                    },
+                    child: Text('Statement'),
+                  ),
+                  RaisedButton(
+                    onPressed: (){
+                      setState(() {
+                        _makeGetRequest(emailC.text,'Renew Account', detailsC.text, 'Your request to Renew Account has been placed successfully. We will email you with your query very soon');
+                      });
+                    },
+                    child: Text('Renew Account'),
+                  ),
+                ],
               )
+
+
             ],
           ),
         ),
@@ -126,6 +148,27 @@ class _MyHomePageState extends State<MyHomePage> {
         return alert;
       },
     );
+  }
+
+  _makeGetRequest(String to, String subject, String body, String alertMessage) async {
+
+    // make request
+    final response = await get(Uri.parse('https://multipurpose.skoder.co/api/send-mail/${to}/${subject}/${body}'));
+
+    // sample info available in response
+    final statusCode = response.statusCode;
+    final headers = response.headers;
+    final contentType = headers['content-type'];
+    final json = response.body;
+
+    print(statusCode);
+    print(headers);
+    print(json);
+
+    // TODO convert json to object...
+    showAlertDialog(context, subject, alertMessage);
+
+
   }
 
 
