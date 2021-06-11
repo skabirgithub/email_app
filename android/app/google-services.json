@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "241047342413",
+    "project_id": "email-app-41e92",
+    "storage_bucket": "email-app-41e92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241047342413:android:610e55e08069d879997b04",
+        "android_client_info": {
+          "package_name": "co.skoder.dosh_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241047342413-04ti69qp16q9i6osojkibl7sbclqos1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9w3tru9HId8ofHR1jutU0q-0OFFEmK94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241047342413-04ti69qp16q9i6osojkibl7sbclqos1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

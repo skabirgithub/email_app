@@ -175,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   RaisedButton(
                     onPressed: (){
                       setState(() {
-                        _makeGetRequest(emailC.text,'Check Balance', detailsC.text, 'Your request to check balance has been placed successfully. We will email you with your query very soon');
+                        _makeGetRequest(emailC.text,'Check Balance', detailsC.text, 'Thank you for your balance inquiry. we will email you the balance shortly');
                       });
                     },
                     child: Text('Balance'),
@@ -183,7 +183,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   RaisedButton(
                     onPressed: (){
                       setState(() {
-                        _makeGetRequest(emailC.text,'Check Statement', detailsC.text, 'Your request to check balance has been placed successfully. We will email you with your query very soon');
+                        _makeGetRequest(emailC.text,'Check Statement', detailsC.text, 'Thank you for your statement inquiry. we will email you the statement shortly');
                       });
                     },
                     child: Text('Statement'),
@@ -191,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   RaisedButton(
                     onPressed: (){
                       setState(() {
-                        _makeGetRequest(emailC.text,'Renew Account', detailsC.text, 'Your request to Renew Account has been placed successfully. We will email you with your query very soon');
+                        _makeGetRequest(emailC.text,'Renew Account', detailsC.text, 'Thank you for your renewal request, please send the last 3 months of business bank statements to: Renewals@smartbusinessfunder.com');
                       });
                     },
                     child: Text('Renew Account'),
