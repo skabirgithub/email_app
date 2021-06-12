@@ -284,3 +284,5 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 }
+
+//keytool -genkey -v -keystore D:\appstore\keystores\emailapp\emailappkey.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key

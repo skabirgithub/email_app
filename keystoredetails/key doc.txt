@@ -1,0 +1,18 @@
+
+keytool -genkey -v -keystore D:\appstore\keystores\emailapp\emailappkey.jks -storetype JKS -keyalg RSA -keysize 2048 -validity 10000 -alias key
+
+password - skoder
+first - sk
+org unit - skoder dev
+org - skoder
+city - dhaka
+state - dhaka
+cntry - bd
+
+
+keypass - 123456
+
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore D:\appstore\keystores\emailapp\emailappkey.jks -destkeystore D:\appstore\keystores\emailapp\emailappkey.jks -deststoretype pkcs12".
+PS D:\appstore\keystores\emailapp>
